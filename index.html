@@ -1,0 +1,478 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Travelworld.com</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      href="https://unpkg.com/bs-brain@2.0.3/components/navbars/navbar-1/assets/css/navbar-1.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/footer.css">
+    <script src="https://kit.fontawesome.com/ebe71ef2e7.js" crossorigin="anonymous"></script>
+  </head>
+  <body class="img-fluid">
+    <nav class="navbar navbar-custom navbar-expand-lg">
+      <div class="container-fluid">
+        <div class="logo">
+          <a href="index.html"><img src="./images/logo.png" alt="logo"/></a>
+        </div>
+        <!-- <a class="navbar-brand" href="#">BookMyYatra</a> -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#Book">Booking</a>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#container-package" role="button" data-bs-toggle="dropdown"><b>Packages</b></a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#USA">United States</a></li>
+                <li><a class="dropdown-item" href="#Russia">Russia</a></li>
+                <li><a class="dropdown-item" href="#London">London</a></li>
+                <li><a class="dropdown-item" href="#Canada">Canada</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link active .navbar-brand" aria-current="page" href="#page3" >Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#page4">Gallery</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#footer">Contact Us</a>
+            </li>
+          </ul>
+          <a href="./login.html">
+            <button class="btns" type="button" id="logIn">Log in</button></a>
+          <a href="./register.html">
+            <button class="btns" type="button" id="register">Register</button></a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Navbar section end -->
+    <div class="container mt-3">
+
+    <div class="welcome"><br><br>
+      <h2>Welcome to TravelWorld</h2>
+      <h1>Visit <span id="changeText"> </span></h1>
+      <!-- <a href="./login.html" target="_blank">
+      <button class="inquire">Book Now</button></a> -->
+    </div>
+  
+    <section id="booking-section">
+      <div class="container mt-2">
+        <div class="row">
+          <div class="col-md-6 col-sm-1 my-4">
+            <img class="img-fluid mx-md-5" id="bookImage" src="images/bookimage1.jpg" alt=""/>
+          </div>
+          <div class="col-md-6 col-sm-1 my-md-5 mb-sm-2">
+            <div class="formInput mx-md-5 mt-md-2 mb-sm-2">
+              <form action="">
+                <div class="mb-3">
+                  <input type="text" class="form-control" id="whereTo" name="whereTo" list="bookingPlaces" placeholder="Where To" required/>
+                  <datalist id="bookingPlaces">
+                    <option value="India">India</option>
+                    <option value="USA">USA</option>
+                    <option value="Russia">Russia</option>
+                    <option value="Bangkok">Bangkok</option>
+                    <option value="Thailand">Thailand</option>
+                    <option value="London">London</option>
+                  </datalist>
+                </div>
+                <div class="mb-3">
+                  <input type="number" class="form-control" id="howMany" name="howMany" placeholder="How Many" min="1" max="10" required/>
+                </div>
+                <div class="mb-3">
+                  <input type="date" class="form-control" id="fromDate" name="fromDate" placeholder="Start Date" required/>
+                </div>
+                <div class="mb-3">
+                  <input type="date" class="form-control" id="toDate" name="toDate" onclick="getDate()" placeholder="End Date" required disabled/>
+                </div>
+                <textarea class="form-control mb-3" id="exampleFormControlTextarea1" rows="3" maxlength="500" minlength="50" id="textArea" placeholder="Enter your name & details" style="resize: none" required></textarea>
+                <button class="mb-3" type="submit" id="bookButton" onclick="onSubmit()"> Book Now </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+<br>
+<br>
+<br>
+    <!-- End of booking section -->
+
+    <section id="page2 package-section">
+      <div class="container mt-5">
+        <div class="row">
+          <h2 class="gallery-heading">Package Gallery</h2>
+          <div class="col-md-4 mt-md-5">
+            <div class="card">
+              <img src="./images/moscowcardbg.jpg" class="card-img-top" height="218rem" alt="..."/>
+              <div class="card-body">
+                <h5 class="card-title">Moscow</h5>
+                <h6 class="card-title">Moscow is a fascinating city with rich history, culture, and architecture.</h6>
+                <p class="card-text">
+                  Moscow's dynamic atmosphere blends iconic landmarks like the Kremlin, Bolshoi Theatre, and world-class museums, offering a unique blend of history, art, and modernity.
+                </p>
+                <div class="ratings">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+                <br>
+                <p class="PackagePrice">Price: <span><b>$1400</b></span> (Visa not included)</p>
+
+                <a href="#book"><button type="submit" class="p">Book Now</button></a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-4 mt-md-5">
+            <div class="card">
+              <img src="./images/canadacardbg.jpg" class="card-img-top" height="217rem" alt="..."/>
+              <div class="card-body">
+                <h5 class="card-title">Canada</h5>
+                <h6 class="card-title">
+                  Canada is known for its stunning natural landscapes, diverse culture, and friendly people.
+                </h6>
+                <p class="card-text">
+                  Canada offers stunning natural wonders like Rocky Mountains and Niagara Falls, as well as Toronto, and Montreal with diverse cultural offerings and friendly locals.
+                </p>
+                <div class="ratings">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star-half"></i>
+                </div>
+                <br>
+                <p class="PackagePrice">Price: <span><b>$750</b></span> (Visa not included)</p>
+                <a href="#book"><button type="submit" class="PackageBookNowBtn"> Book Now </button></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mt-md-5">
+            <div class="card">
+              <img src="./images/UsaCardBg.jpg" class="card-img-top" height="231rem" alt="..."/>
+              <div class="card-body">
+                <h5 class="card-title">United States of America</h5>
+                <h6 class="card-title">Welcome to USA: Where Dreams Come to Life!</h6>
+                <p class="card-text">
+                  Embark on an American odyssey, where iconic landmarks, rich
+                  cultures, and breathtaking landscapes converge. Discover the
+                  diverse tapestry of the USA's allure.
+                </p>
+                <div class="ratings">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star-half"></i>
+                </div>
+                <br>
+                <p class="PackagePrice">Price: <span><b>$8250</b></span> (Visa not included)</p>
+                <a href="#book"><button type="submit" class="PackageBookNowBtn"> Book Now</button></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4 mt-md-5">
+            <div class="card">
+              <img src="./images/mexicocardbg.jpg" class="card-img-top" height="195rem" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Mexico</h5>
+                <h6 class="card-title"> Mexico is a vibrant country renowned for its rich history, colorful culture, and delicious cuisine. </h6>
+
+                <p class="card-text">
+                  Mexico's rich history, cultural heritage, and vibrant festivals make it a perfect destination for cultural exploration and relaxation, offering a sensory-rich experience.
+                </p>
+                <div class="ratings">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star-half"></i>
+                </div>
+                <br>
+                <p class="PackagePrice">Price: <span><b>$2000</b></span> (Visa not included)</p>
+
+                <a href="#book"
+                  ><button type="submit" class="p">Book Now</button></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mt-md-5">
+            <div class="card">
+              <img  src="./images/francecardbg.jpg" class="card-img-top" height="195rem" alt="..."/>
+              <div class="card-body">
+                <h5 class="card-title">France</h5>
+                <h6 class="card-title">
+                  France is a beautiful country with a rich history, culture, and cuisine.
+                </h6>
+                <p class="card-text">
+                  France offers an unforgettable experience with its unique blend of art, cuisine, and culture, from iconic Paris landmarks to the rustic charm of the French countryside.
+                </p>
+                <div class="ratings">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star-half"></i>
+                </div>
+                <br>
+                <p class="PackagePrice">Price: <span><b>$900</b></span> (Visa not included)</p>
+                <a href="#book"
+                  ><button type="submit" class="PackageBookNowBtn"> Book Now </button></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mt-md-5">
+            <div class="card">
+              <img src="./images/australiacardbg.jpg" height="187rem" class="card-img-top" alt="..."/>
+              <div class="card-body">
+                <h5 class="card-title">Australia</h5>
+                <h6 class="card-title">
+                  Australia Unveiled: Wonders Down Under
+                </h6>
+                <p class="card-text">
+                  Explore Australia's iconic landmarks, from the Sydney Opera
+                  House to Bondi Beach, showcasing a harmonious blend of urban
+                  sophistication and natural beauty.
+                </p>
+                <br>
+                <div class="ratings">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star-half"></i>
+                </div>
+                <br>
+                <p class="PackagePrice">Price: <span><b>$1350</b></span> (Visa not included)</p>
+                <a href="#book"><button type="submit" class="PackageBookNowBtn">Book Now</button></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4 mt-md-5">
+            <div class="card">
+              <img src="./images/indiacardbg.jpg" class="card-img-top" height="230rem" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">India</h5>
+                <h6 class="card-title">India is a diverse and vibrant country with a rich cultural heritage.</h6>
+
+                <p class="card-text">
+                  Embark on an odyssey through India's ancient wonders and modern marvels, where every corner unveils a tapestry of colors, flavors, and traditions, promising an adventure of a lifetime.
+                </p>
+                <div class="ratings">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+                <br>
+                <p class="PackagePrice">Price: <span><b>$1200</b></span> (Visa not included)</p>
+
+                <a href="#book"
+                  ><button type="submit" class="p">Book Now</button></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mt-md-5">
+            <div class="card">
+              <img  src="./images/vietnamcardbg.jpg" class="card-img-top" height="240rem" alt="..."/>
+              <div class="card-body">
+                <h5 class="card-title">Vietnam</h5>
+                <h6 class="card-title">
+                  Vietnam's rich history, stunning landscapes, delicious cuisine, and warm hospitality make it a fascinating destination to explore. 
+                </h6>
+                <p class="card-text">
+                  Vietnam offers stunning natural beauty, delectable cuisine, and vibrant culture, with its limestone cliffs of Ha Long Bay and rice paddies of Sapa.
+                </p>
+                <div class="ratings">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star-half"></i>
+                </div>
+                <br>
+                <p class="PackagePrice">Price: <span><b>$900</b></span> (Visa not included)</p>
+                <a href="#book"
+                  ><button type="submit" class="PackageBookNowBtn"> Book Now </button></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mt-md-5">
+            <div class="card">
+              <img src="./images/taiwancardbg.jpg" height="187rem" class="card-img-top" alt="..."/>
+              <div class="card-body">
+                <h5 class="card-title">Taiwan</h5>
+                <h6 class="card-title">
+                  Taiwan is known for its stunning landscapes, delicious cuisine, rich history, and vibrant culture. 
+                </h6>
+                <p class="card-text">
+                  Discover Taiwan's captivating blend of traditional charm and modern innovation as you explore its scenic wonders and vibrant city life, creating unforgettable memories in the heart of Asia.
+                </p>
+                <div class="ratings">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+                <br>
+                <br>
+                <p class="PackagePrice">Price: <span><b>$1350</b></span> (Visa not included)</p>
+                <a href="#book"><button type="submit" class="PackageBookNowBtn">Book Now</button></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+<br><br>
+    <section id="page3">
+      <h2 class="other-services">Other Services</h2>
+      <div class="service-container">
+        <div class="service">
+          <!-- hotels -->
+          <div class="thumbnail">
+            <img src="./images/accomodations.jpg" alt="hotels">
+          </div>
+          <p>
+            <span><i class="fa-solid fa-hotel"></i></span> &nbsp; &nbsp; Accommodation is a crucial service in the tourism industry, offering hotels, resorts, motels, lodges, and hostels with amenities like room service, Wi-Fi, swimming pools, spas, and fitness centers.
+          </p>
+        </div>
+        <div class="service">
+          <!-- Foods and drinks -->
+          <div class="thumbnail">
+            <img src="./images/foods.jpg" alt="foods">
+          </div>
+          <p>
+            <span><i class="fa-solid fa-utensils"></i></span> &nbsp; &nbsp; Food services in the tourism industry cater to various cuisines and dietary requirements, available on specific travel packages, making it an integral part of any trip or vacation.
+          </p>
+        </div>
+        <div class="service">
+          <!-- Insurance -->
+          <div class="thumbnail">
+            <img
+              src="./images/travelinsurance.jpg"alt="travel-insurance"/>
+          </div>
+          <p>
+            <span><i class="fa-solid fa-user-shield"></i></span> &nbsp; &nbsp; We offer top-notch travel insurance, covering flight and baggage loss, accidents, and medical emergencies.
+          </p>
+        </div>
+        <div class="service">
+          <!-- door step services -->
+          <div class="thumbnail">
+            <img
+              src="./images/freepickup.jpg" alt="documentation"/>
+          </div>
+          <p>
+            <span><i class="fa-solid fa-house-flag"></i></span> &nbsp; &nbsp; Travel Euphoria offers convenient document collection and delivery services, eliminating the need to visit an office, ensuring a hassle-free and enjoyable traveling experience, making it easier for busy schedules to submit or collect documents.
+          </p>
+        </div>
+        <div class="service">
+          <!-- live support -->
+          <div class="thumbnail">
+            <img
+              src="./images/livechatsupport.jpg" alt="livechatsupport"/>
+          </div>
+          <p>
+            <span><i class="fa-solid fa-phone-volume"></i></span> &nbsp; &nbsp; Our aim is to provide 24/7 availability for our prestigious clients, ensuring all their concerns are addressed until they are completely satisfied.
+          </p>
+        </div>
+        <div class="service">
+          <!-- car services -->
+          <div class="thumbnail">
+            <img
+              src="./images/car_rental.jpg" alt="car_rental"/>
+          </div>
+          <p>
+            <span> <i class="fa-solid fa-car"></i></span> &nbsp; &nbsp;Transportation is a crucial aspect of any trip, and the tourism industry offers various modes of travel like air travel, rail travel, road travel, and water travel. The airline industry is integral to connecting people from different parts of the world.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="page4">
+      <h2 class="gallery-heading">Gallery</h2>
+      <div class="Gallery container-fluid">
+        <div class="row">
+          <div class="col-lg-6 col-12">
+            <div class="row">
+              <div class="col-lg-12 top-div">
+                <img class="page4_image"
+                  src="./images/gallery1.jpg" alt="image"/>
+              </div>
+              <div class="col-12 top-div">
+                <img class="page4_image"
+                  src="./images/gallery2.jpg"alt="image"/>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-12">
+            <div class="row">
+              <div class="col-12 right-first-div">
+                <img class="page4_image"
+                  src="./images/gallery3.jpg"alt="image"/>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 col-12 bottom_div">
+                <img class="page4_image"
+                  src="./images/gallery4.jpg"alt="image"/>
+              </div>
+              <div class="col-md-6 col-12 bottom_div">
+                <img class="page4_image"
+                  src="./images//gallery5.jpg"alt="Rome"/>
+              </div>
+              <div class="col-md-6 col-12 top-div">
+                <img class="page4_image"
+                  src="./images/gallery6.jpg"alt="germany"/>
+              </div>
+              <div class="col-md-6 bottom_div">
+                <img class="page4_image"
+                  src="./images/gallery7.jpg"alt="USA"/>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <br><br>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"crossorigin="anonymous">
+    </script>
+
+    <footer id="footer"class="footer">
+      <div class="social-media-link">
+          <div class="footer-wrapper">
+            <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook-f fa-beat fa-2x"></i></a>
+            <a href="https://twitter.com/?lang=en"><i class="fa-brands fa-x-twitter fa-beat fa-2x"></i></a>
+            <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram fa-beat fa-2x"></i></a>
+            <a href="#"><i class="fa-solid fa-square-phone fa-beat fa-2x"></i></a>
+            <a href="mailto:someone@example.com"><i class="fa-regular fa-envelope fa-beat fa-2x"></i></a>
+          </div>
+          <div class="foter">
+            <p><b>Travel World &copy; 2024, All Rights Reserved</b></p>
+          </div>
+      </div>
+  </footer>
+  </body>
+  <script src="./js/script.js"></script>
+</html>
